@@ -1,12 +1,12 @@
 pragma solidity 0.4.19;
 
+string private greeting;
 
-contract Greeter {
-    string private greeting;
+function Greeter(string _greeter) public {
+    greeting = _greeter;
+}
 
-    function Greeter(string _greeter) public {
-    }
-
-    function greet() public view returns (string) {
-    }
+function greet() public view returns (string) {
+    return greeting;
+}
 }
