@@ -120,8 +120,8 @@ contract Betting {
     function withdraw(uint withdrawAmount) public returns (uint) {
         if (withdrawAmount <= winnings[msg.sender]) {
             winnings[msg.sender] -= withdrawAmount;
+	    msg.sender.transfer(withdrawAmount);
         }
-        msg.sender.transfer(withdrawAmount);
     }
     
     /* Allow anyone to check the outcomes they can bet on */
